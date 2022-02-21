@@ -4,6 +4,7 @@ import {
   Dimensions,
   Image,
   Platform,
+  StatusBar,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -13,21 +14,18 @@ import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-// Plus...
-
-// Font Awesome Icons...
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { useRef } from "react";
 import Home from "./pages/Home";
+import Profile from "./pages/Profile";
 
 const Tab = createBottomTabNavigator();
 
-// Hiding Tab Names...
 export default function App() {
-  // Animated Tab Indicator...
   const tabOffsetValue = useRef(new Animated.Value(0)).current;
   return (
     <NavigationContainer>
+      <StatusBar backgroundColor="transparent" translucent={true} />
       <Tab.Navigator
         screenOptions={{
           tabBarShowLabel: false,
@@ -65,7 +63,7 @@ export default function App() {
                 <FontAwesome
                   name="home"
                   size={25}
-                  color={focused ? "#206df1r" : "gray"}
+                  color={focused ? "#206df1" : "gray"}
                 ></FontAwesome>
               </View>
             ),
@@ -83,7 +81,7 @@ export default function App() {
 
         <Tab.Screen
           name={"Search"}
-          component={SearchScreen}
+          component={Profile}
           options={{
             tabBarIcon: ({ focused }) => (
               <View
@@ -94,9 +92,9 @@ export default function App() {
                 }}
               >
                 <FontAwesome
-                  name="search"
+                  name="suitcase"
                   size={25}
-                  color={focused ? "#206df1r" : "gray"}
+                  color={focused ? "#206df1" : "gray"}
                 ></FontAwesome>
               </View>
             ),
@@ -126,11 +124,17 @@ export default function App() {
                   style={{
                     width: 55,
                     height: 55,
-                    backgroundColor: "#206df1r",
-                    borderRadius: 30,
+                    backgroundColor: "#206df1",
+                    borderRadius: 55 / 2,
                     justifyContent: "center",
                     alignItems: "center",
                     marginBottom: Platform.OS == "android" ? 50 : 30,
+                    shadowColor: "#000",
+                    shadowOpacity: 0.06,
+                    shadowOffset: {
+                      width: 10,
+                      height: 10,
+                    },
                   }}
                 >
                   <FontAwesome
@@ -159,7 +163,7 @@ export default function App() {
                 <FontAwesome
                   name="bell"
                   size={25}
-                  color={focused ? "#206df1r" : "gray"}
+                  color={focused ? "#206df1" : "gray"}
                 ></FontAwesome>
               </View>
             ),
@@ -190,7 +194,7 @@ export default function App() {
                 <FontAwesome
                   name="user"
                   size={25}
-                  color={focused ? "#206df1r" : "gray"}
+                  color={focused ? "#206df1" : "gray"}
                 ></FontAwesome>
               </View>
             ),
@@ -206,19 +210,6 @@ export default function App() {
           })}
         ></Tab.Screen>
       </Tab.Navigator>
-
-      {/* <Animated.View
-        style={{
-          width: getWidth() - 20,
-          height: 2,
-          backgroundColor: "#206df1r",
-          position: "absolute",
-          bottom: 98,
-          left: 50,
-          borderRadius: 20,
-          transform: [{ translateX: tabOffsetValue }],
-        }}
-      ></Animated.View> */}
     </NavigationContainer>
   );
 }

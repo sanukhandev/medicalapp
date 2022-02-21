@@ -8,12 +8,6 @@ import NavBar from "../componets/Navbar";
 const Home = () => {
   return (
     <Conatiner styles={styles.container}>
-      <StatusBar
-        barStyle="dark-content"
-        hidden={false}
-        backgroundColor="#fff"
-        translucent={true}
-      />
       <NavBar />
       <DateCapsuleConatiner />
       <AppoinmentCard selected={true} />
