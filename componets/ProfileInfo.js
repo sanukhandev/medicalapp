@@ -11,7 +11,29 @@ const ProfileInfo = () => {
         </Text>
       </View>
       <View style={styles.chartcontainer}>
+        <View style={styles.xaxis}>
+          <Text style={[styles.axisLabel]}>H</Text>
+          <Text style={[styles.axisLabel]}>D</Text>
+          <Text style={[styles.axisLabel, styles.slectedAxis]}>W</Text>
+          <Text style={[styles.axisLabel]}>M</Text>
+          <Text style={[styles.axisLabel]}>6M</Text>
+          <Text style={[styles.axisLabel]}>Y</Text>
+        </View>
         <Chart />
+      </View>
+      <View style={styles.info2}>
+        <Text style={styles.H1}>History</Text>
+        <View style={styles.rows}>
+          <Text style={styles.capsule}>
+            5,000 <Text style={styles.capsuleText}>steps</Text>
+          </Text>
+          <Text style={styles.capsule}>
+            5,000 <Text style={styles.capsuleText}>steps</Text>
+          </Text>
+          <Text style={styles.capsule}>
+            5,000 <Text style={styles.capsuleText}>steps</Text>
+          </Text>
+        </View>
       </View>
     </View>
   );
@@ -20,7 +42,7 @@ const ProfileInfo = () => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#d1e9fc",
-    height: 300,
+    height: 320,
     borderRadius: 20,
     margin: 20,
     padding: 10,
@@ -39,6 +61,7 @@ const styles = StyleSheet.create({
   capsule: {
     fontSize: 18,
     color: "white",
+    width: 100,
     marginTop: 5,
     height: 30,
     paddingHorizontal: 10,
@@ -51,6 +74,31 @@ const styles = StyleSheet.create({
     color: "#7aa9fb",
   },
   chartcontainer: {
+    margin: 10,
+    flexDirection: "column",
+  },
+  xaxis: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginLeft: 10,
+    marginRight: 10,
+    marginBottom: 5,
+  },
+  axisLabel: {
+    fontSize: 18,
+    color: "#1865a3",
+    marginTop: 5,
+    height: 30,
+  },
+  slectedAxis: {
+    color: "#206df1",
+    backgroundColor: "white",
+    padding: 5,
+    borderRadius: 15,
+  },
+  rows: {
+    flexDirection: "row",
+    justifyContent: "space-between",
     margin: 10,
   },
 });

@@ -1,22 +1,22 @@
-import { BarChart } from "react-native-svg-charts";
-const Chart = () => {
-  const data = [50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80];
+import CustomBar from "./CustomBar";
 
-  return (
-    <BarChart
-      style={{
-        height: 200,
-      }}
-      svg={{ fill: "rgba(134, 65, 244, 0.8)" }}
-      spacingInner={0.4}
-      spacingOuter={0.1}
-      gridMin={-100}
-      gridMax={120}
-      data={data}
-      svg={{ fill: "#206df1" }}
-      contentInset={{ top: 30, bottom: 30 }}
-    ></BarChart>
-  );
+const Chart = () => {
+  const data = [
+    { label: "Jan", value: 500 },
+    { label: "Feb", value: 312 },
+    { label: "Mar", value: 424 },
+    { label: "Apr", value: 745 },
+    { label: "May", value: 89 },
+    { label: "Jun", value: 434 },
+    { label: "Jul", value: 650 },
+    { label: "Aug", value: 980 },
+    { label: "Sep", value: 123 },
+    { label: "Oct", value: 186 },
+    { label: "Nov", value: 689 },
+    { label: "Dec", value: 643 },
+  ];
+
+  return <CustomBar data={data} />;
 };
 
 export default Chart;

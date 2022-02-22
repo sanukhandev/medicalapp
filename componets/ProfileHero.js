@@ -11,6 +11,12 @@ const ProfileHero = () => {
       colors={["#cce5ff", "#96d2fb"]}
       style={styles.container}
     >
+      <Image
+        resizeMode="cover"
+        blurRadius={5}
+        source={{ uri: "https://randomuser.me/api/portraits/women/25.jpg" }}
+        style={styles.image}
+      />
       <View style={styles.nav}>
         <View>
           <Icon name="chevron-left" size={25} color="#1865a3" />
@@ -26,8 +32,7 @@ const ProfileHero = () => {
           }}
           style={[styles.circleImage]}
         />
-        <Text style={styles.H1}>Evalyn</Text>
-        <Text style={styles.H1}>Barnes</Text>
+        <Text style={styles.H1}>Evalyn Barnes</Text>
         <Text style={styles.subtext}>29 yo, Female</Text>
       </View>
     </AnimatedLinearGradient>
@@ -36,7 +41,7 @@ const ProfileHero = () => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#206df1",
-    height: "50%",
+    height: 350,
     paddingTop: 25,
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
@@ -83,6 +88,13 @@ const styles = StyleSheet.create({
     paddingVertical: 2,
     borderRadius: 10,
     backgroundColor: "white",
+  },
+  image: {
+    width: "100%",
+    height: 350,
+    opacity: 0.5,
+    borderRadius: 20,
+    position: "absolute",
   },
 });
 
