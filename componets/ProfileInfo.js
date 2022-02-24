@@ -23,17 +23,7 @@ const ProfileInfo = () => {
       </View>
       <View style={styles.info2}>
         <Text style={styles.H1}>History</Text>
-        <View style={styles.rows}>
-          <Text style={styles.capsule}>
-            5,000 <Text style={styles.capsuleText}>steps</Text>
-          </Text>
-          <Text style={styles.capsule}>
-            5,000 <Text style={styles.capsuleText}>steps</Text>
-          </Text>
-          <Text style={styles.capsule}>
-            5,000 <Text style={styles.capsuleText}>steps</Text>
-          </Text>
-        </View>
+        <View style={styles.rows}></View>
       </View>
     </View>
   );
